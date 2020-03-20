@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %} {% endblock %}
+
+{% block content %}
+<h1>Word Game:</h1>
+<div>
+  <table class="table table-striped">
+    <tbody>
+      {% for x in range(0,5) %}
+      <tr>
+        {% for y in range(0,5) %}
+          <td class="text-center">
+            {{game_board[x][y]}}
+          </td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  <form action="" class="form-inline" id="word_form">
+    <div class="form-group mb-2">
+      <label for="word">Enter Word:&nbsp </label>
+      <input type="text" class="form-control" id="word_input" name='word_input' placeholder="Enter word">
+    </div>
+    <button class="btn btn-primary mb-2">Submit</button>
+  </form>
+</div>
+{% endblock %}
