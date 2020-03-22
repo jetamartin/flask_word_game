@@ -2,8 +2,14 @@
 {% block title %} {% endblock %}
 
 {% block content %}
-<h1>Word Game:</h1>
 <div>
+  <h6>Timer:<span id="timer"></span> <span id="timer-expired">Time is up!</span></h6>
+  <h6>High Score: 
+    <b>{{ high_score }}</b> 
+    in {{ play_count }} plays
+  </h6>
+
+  <p>Score:<span id="score-count">0</span></p>
   <table class="table table-striped">
     <tbody>
       {% for x in range(0,5) %}
@@ -17,12 +23,16 @@
     {% endfor %}
     </tbody>
   </table>
-  <form action="" class="form-inline" id="word_form">
+  <form action="" class="form-inline" id="word-form">
     <div class="form-group mb-2">
       <label for="word">Enter Word:&nbsp </label>
-      <input type="text" class="form-control" id="word_input" name='word_input' placeholder="Enter word">
+      <input type="text" class="form-control" id="word-input" name='word-input' placeholder="Enter word">
     </div>
     <button class="btn btn-primary mb-2">Submit</button>
   </form>
+  <p id="results-msg"></p>
+
 </div>
+
 {% endblock %}
+<!-- <script src="{{url_for('static', filename='scripts.js')}}"></script> -->
