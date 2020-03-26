@@ -1,11 +1,64 @@
 h1 {
-  color: red;
+  letter-spacing: 3px;
 }
 
 .container {
   margin-top: 3rem;
 }
 
+.table {
+  width: 50% !important;
+  margin-top: 1rem;
+}
+
+td {
+  color: #666666;
+  font-weight: bold;
+}
+
+h6, h5 {
+  font-weight: bold;
+  color: #666666;
+}
+
+h5 {
+  text-decoration: underline;
+  letter-spacing: 2px;
+}
+
+label {
+  padding-right: 10px;
+  font-weight: bold;
+  color: #666666;
+
+}
+
+/* p {
+  font-weight: bold;
+} */
+
+#timer {
+  margin-left: 1rem;
+  border-radius: .2rem;
+  font-weight: bold;
+  padding: 0 1rem;
+}
+
 #timer-expired {
   display: none;
+  color: red;
+  font-weight: bold;
+  margin-left: 1rem;
 }
+
+/* table {
+  margin-top: 1rem;
+} */
+#score-count {
+  margin-left: 1rem;
+  font-weight: bold;
+}
+
+/* .results-msg {
+  margin-left: 1rem;
+ } */

@@ -13,16 +13,18 @@ boggle_game = Boggle()
 
 @app.route('/')
 def root():
-
+  """ Display the Game Board """
   game_board = boggle_game.make_board()
   session['game_board'] = game_board
   high_score = session.get("high_score", 0)
   play_count = session.get("play_count", 0)
+  # import pdb; pdb.set_trace()
   return render_template('game_board.html', game_board = game_board, 
   high_score = high_score, play_count = play_count)
 
 @app.route('/word_check')
 def word_submit():
+  """ Check if word submitted is valid word and on game board """
  
   game_board = session['game_board']
   word_value = request.args['word']
@@ -33,8 +35,7 @@ def word_submit():
 
 @app.route('/post_score', methods = ['POST'])
 def record_score():
-  # import pdb; pdb.set_trace()
-  # highest_score = request.json['params']['score']
+  """ Once game is over register score and notify client if new high score """
   score = request.json["score"]
   high_score = session.get("high_score", 0)
   play_count = session.get("play_count", 0)
