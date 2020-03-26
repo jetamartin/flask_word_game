@@ -52,14 +52,14 @@ class FlaskTests(TestCase):
             res = client.get('/word_check?word=xyz')                   
             self.assertEqual(res.json['result'], 'not-word')
 
-    # def test_post_score(self):
-    #     """ That True is returned if final score represents a new high score"""
-    #     with app.test_client() as client:
-    #         with client.session_transaction() as sess:
-    #             sess['high_score'] = 10
-    #             sess['play_count'] = 5
-    #     res = client.post('/post_score', data={'high_score' : 11, 'play_count' : 6 })
-    #     import pdb; pdb.set_trace()                  
+    def test_post_score(self):
+        """ That True is returned if final score represents a new high score"""
+        with app.test_client() as client:
+            with client.session_transaction() as sess:
+                sess['high_score'] = 10
+                sess['play_count'] = 5
+        res = client.post('/post_score', data={'score' : '11'})
+        import pdb; pdb.set_trace()                  
 
      
 
